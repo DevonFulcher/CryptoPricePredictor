@@ -45,8 +45,8 @@ def generate_x_and_y(observations_set, length_of_convolution, portion_training_s
         for _ in range(length_of_convolution):
             x.append(observations_set[j + i][1])
             i += 1
-        y.append(j + i + 1)
-    return (x ,y)
+        y.append(observations_set[j + i + 1][1])
+    return x, y
 
 if __name__ == '__main__':
     print(data_generator())
