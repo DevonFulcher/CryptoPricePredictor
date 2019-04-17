@@ -26,17 +26,14 @@ print(something)
 # for data in list_tensor:
 #print((data[0],data[1]))'''
 
-def data_generator(inputFile):
-
+def data_generator(csvFile):
     #this is a constant for now
     #the number of observations before prediction
     length_of_convolution = 50
     #the portion of the total data set that is dedicated to training
     portion_training_set = .8
     #data_generator to take general csvInput
-    with open(inputFile, newline='') as csvfile:
-        for i in csvfile:
-            print(i)
+    with open(csvFile, newline='') as csvfile:
         data = csv.reader(csvfile)
         training_set = data[:portion_training_set * len(data)]
         test_set = data[len(data) - portion_training_set * len(data):]
