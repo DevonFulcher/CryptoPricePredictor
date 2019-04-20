@@ -3,7 +3,7 @@ from tcn import compiled_tcn
 import argparse #Use to parse args
 
 parser = argparse.ArgumentParser(description = "Load in any csv file")
-parser.add_argument("CSVFile",help="a file to parse")
+parser.add_argument("CSVFile",type=str,help="a file to parse")
 args = parser.parse_args()
 
 def run_task():

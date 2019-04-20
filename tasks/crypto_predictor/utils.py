@@ -3,14 +3,17 @@ import numpy as np
 import math
 
 
-def data_generator():
+def data_generator(inputFile):
+
     #this is a constant for now
     #the number of observations before prediction
     length_of_convolution = 50
     #the portion of the total data set that is dedicated to training
     portion_training_set = .8
-
-    with open('bitcoin prices 4-3-18 to 4-3-19.csv', newline='') as csvfile:
+    #data_generator to take general csvInput
+    with open(inputFile, newline='') as csvfile:
+        for i in csvfile:
+            print(i)
         data = csv.reader(csvfile)
         prices = []
         for datum in data:
