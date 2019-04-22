@@ -26,8 +26,14 @@ def run_task():
 
     model.summary()
 
-    model.fit(x_train, y_train.squeeze().argmax(axis=1), epochs=100,
-              validation_data=(x_test, y_test.squeeze().argmax(axis=1)))
+    print("y_train: ", y_train)
+    print("y_train.shape: ", y_train.shape)
+    print("x_train: ", x_train)
+    print("x_train.shape: ", x_train.shape)
+    input()
+    model.fit(x_train, y_train, epochs=100, validation_data=(x_test, y_test))
+    # model.fit(x_train, y_train.squeeze().argmax(axis=1), epochs=100,
+    #           validation_data=(x_test, y_test.squeeze().argmax(axis=1)))
 
 
 if __name__ == '__main__':
