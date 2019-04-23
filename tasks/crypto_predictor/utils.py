@@ -27,12 +27,12 @@ def generate_x_and_y(observations_set, length_of_convolution):
     assert len(observations_set) >= length_of_convolution, \
         "len(observations_set): " + str(len(observations_set)) + " length_of_convolution: " + str(length_of_convolution)
     num_training_examples = len(observations_set) - length_of_convolution
-    x = np.empty([num_training_examples, length_of_convolution])
-    y = np.empty([num_training_examples, 1])
+    x = np.empty([num_training_examples, length_of_convolution, 1])
+    y = np.empty([num_training_examples, 1, 1])
     for i in range(len(x)):
         j = 0
         for _ in range(len(x[0])):
-            x[i][j] = observations_set[i + j]
+            x[i][j][0] = observations_set[i + j]
             j += 1
         y[i] = observations_set[i + j]
     return x, y
