@@ -31,7 +31,3 @@ def generate_x_and_y(observations_set, length_of_convolution):
             j += 1
         y[i] = observations_set[i + j]
     return x, y
-
-
-if __name__ == '__main__':
-    print(data_generator())
