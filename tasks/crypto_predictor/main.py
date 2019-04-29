@@ -55,8 +55,8 @@ def run_task():
                "nb_stacks: " + str(nb_stacks) + "\n" +
                "max_len: " + str(max_len) + "\n" +
                "use_skip_connections: " + str(use_skip_connections) + "\n" +
-               "return_sequences" + str(return_sequences) + "\n" + #uncertain about this parameter
-               "dropout_rate" + str(dropout_rate) + "\n" +
+               "return_sequences: " + str(return_sequences) + "\n" + #uncertain about this parameter
+               "dropout_rate: " + str(dropout_rate) + "\n" +
                "name: " + str(name) + "\n")
 
     print("\nBe sure to type the loss into ", str(name + ".txt"), " for documentation!")
