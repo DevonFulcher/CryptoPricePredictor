@@ -67,13 +67,14 @@ def run_task(length_of_convolution = 3,
                "use_skip_connections, " + str(use_skip_connections) + "\n" +
                "return_sequences, " + str(return_sequences) + "\n" + #uncertain about this parameter
                "dropout_rate, " + str(dropout_rate) + "\n" +
+               "epochs, " + str(epochs) + "\n" +
                "name, " + str(name) + "\n" +
                "input file, " + str(args.CSVFile) + "\n" +
                "average loss, " + average_loss + "\n" +
                "loss, " + str(loss) + "\n")
 
 
-def run_task_indefinite():
+def run_task_indefinite_random():
     #the number of observations before prediction
     range_length_of_convolution = [10, 100]
     range_kernel_size=[4, 10]  # type: int
@@ -82,7 +83,7 @@ def run_task_indefinite():
     range_dropout_rate=[0.01, .1]  # type: float
     range_epochs = [100, 1000]
     name_num = 0
-    namer = "model"
+    namer = "secondRun"
     while(True):
         name=namer + str(name_num)
         try:
@@ -98,6 +99,25 @@ def run_task_indefinite():
             continue
         name_num += 1
 
+'''
+def run_task_indefinite_grid:
+    #the number of observations before prediction
+    range_length_of_convolution = [10, 100]
+    range_kernel_size=[4, 10]  # type: int
+    range_dilations=[3, 9]  # type: List[int]
+    range_nb_stacks=[1, 5] # type: int
+    range_dropout_rate=[0.01, .1]  # type: float
+    range_epochs = [100, 1000]
+    name_num = 0
+    namer = "random"
+    while(True):
+        name=namer + str(name_num)
+        try:
+            for i in range(range_length_of_convolution[0], range_length_of_convolution[1], 10):
+                for j in range(range_kernel_size[0], range_kernel_size[1], 1):
+                    for k in range(range_dilations[0], range_dilations[1], 1):
+                        for l in range(range_nb_stacks)'''
+
 
 if __name__ == '__main__':
-    run_task_indefinite()
+    run_task_indefinite_random()
