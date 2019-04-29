@@ -3,12 +3,7 @@ import numpy as np
 import math
 
 
-def data_generator(inputFile):
-    #this is a constant for now
-    #the number of observations before prediction
-    length_of_convolution = 100
-    #the portion of the total data set that is dedicated to training
-    portion_training_set = .8
+def data_generator(inputFile, length_of_convolution, portion_training_set):
     #data_generator to take general csvInput
     with open(inputFile, newline='') as csvfile:
         data = csv.reader(csvfile)
