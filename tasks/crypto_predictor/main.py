@@ -77,13 +77,13 @@ def run_task(length_of_convolution = 3,
 def run_task_indefinite_random():
     #the number of observations before prediction
     range_length_of_convolution = [10, 100]
-    range_kernel_size=[4, 10]  # type: int
+    range_kernel_size=[2, 10]  # type: int
     range_dilations=[3, 9]  # type: List[int]
-    range_nb_stacks=[1, 5] # type: int
+    range_nb_stacks=[0, 5] # type: int
     range_dropout_rate=[0.01, .1]  # type: float
     range_epochs = [100, 1000]
     name_num = 0
-    namer = "secondRun"
+    namer = "anotherOne"
     while(True):
         name=namer + str(name_num)
         try:
