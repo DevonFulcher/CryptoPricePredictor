@@ -1,8 +1,7 @@
+# Read Cryptocurrency_Price_Predictor.pdf to learn more about our reasearch. The following documentation is from https://github.com/philipperemy/keras-tcn.
+
 # Keras TCN
 
-
-[![Downloads](https://pepy.tech/badge/keras-tcn)](https://pepy.tech/project/keras-tcn)
-[![Downloads](https://pepy.tech/badge/keras-tcn/month)](https://pepy.tech/project/keras-tcn)
 ```bash
 pip install keras-tcn
 ```
