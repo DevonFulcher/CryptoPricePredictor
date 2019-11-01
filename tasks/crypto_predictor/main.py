@@ -83,7 +83,7 @@ def run_task_indefinite_random():
     range_dropout_rate=[0.01, .1]  # type: float
     range_epochs = [100, 1000]
     name_num = 0
-    namer = "anotherOne"
+    namer = "gold"
     while(True):
         name=namer + str(name_num)
         try:
