@@ -60,18 +60,18 @@ def run_task(length_of_convolution = 3,
 
     #output parameters file
     average_loss = str(sum(loss) / len(loss))
-    file = open(average_loss + "-" + name + ".csv", "w+")
-    file.write("kernel_size, " + str(kernel_size) + "\n" +
-               "dilations, " + str(dilations) + "\n" +
-               "nb_stacks, " + str(nb_stacks) + "\n" +
-               "use_skip_connections, " + str(use_skip_connections) + "\n" +
-               "return_sequences, " + str(return_sequences) + "\n" + #uncertain about this parameter
-               "dropout_rate, " + str(dropout_rate) + "\n" +
-               "epochs, " + str(epochs) + "\n" +
-               "name, " + str(name) + "\n" +
-               "input file, " + str(args.CSVFile) + "\n" +
-               "average loss, " + average_loss + "\n" +
-               "loss, " + str(loss) + "\n")
+    with open(average_loss + "-" + name + ".csv", "w+") as file:
+        file.write("kernel_size, " + str(kernel_size) + "\n" +
+                   "dilations, " + str(dilations) + "\n" +
+                   "nb_stacks, " + str(nb_stacks) + "\n" +
+                   "use_skip_connections, " + str(use_skip_connections) + "\n" +
+                   "return_sequences, " + str(return_sequences) + "\n" + #uncertain about this parameter
+                   "dropout_rate, " + str(dropout_rate) + "\n" +
+                   "epochs, " + str(epochs) + "\n" +
+                   "name, " + str(name) + "\n" +
+                   "input file, " + str(args.CSVFile) + "\n" +
+                   "average loss, " + average_loss + "\n" +
+                   "loss, " + str(loss) + "\n")
 
 
 def run_task_indefinite_random():
