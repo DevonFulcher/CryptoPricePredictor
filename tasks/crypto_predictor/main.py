@@ -9,12 +9,12 @@ parser.add_argument("CSVFile",help="a file to parse")
 args = parser.parse_args()
 
 def run_task(length_of_convolution = 3,
-    kernel_size=3,  # type: int
-    dilations=[2 ** i for i in range(9)],  # type: List[int]
-    nb_stacks=1,  # type: int
-    use_skip_connections=True,  # type: bool
+    kernel_size=3,
+    dilations=[2 ** i for i in range(9)],
+    nb_stacks=1,
+    use_skip_connections=True,
     return_sequences=True, #uncertain about this parameter
-    dropout_rate=0.05,  # type: float
+    dropout_rate=0.05,
     epochs = 100,
     name="run",
     create_plot = False):
@@ -24,19 +24,19 @@ def run_task(length_of_convolution = 3,
 
     (x_train, y_train), (x_test, y_test) = data_generator(args.CSVFile, length_of_convolution, portion_training_set)
 
-    model = compiled_tcn(num_feat=1,  # type: int
-                         num_classes=1,  # type: int
-                         nb_filters=20,  # type: int
-                         kernel_size=kernel_size,  # type: int
-                         dilations=dilations,  # type: List[int]
-                         nb_stacks=nb_stacks,  # type: int
-                         max_len=None,  # type: int
-                         padding='causal',  # type: str
-                         use_skip_connections=use_skip_connections,  # type: bool
+    model = compiled_tcn(num_feat=1,
+                         num_classes=1,
+                         nb_filters=20,
+                         kernel_size=kernel_size,
+                         dilations=dilations,
+                         nb_stacks=nb_stacks,
+                         max_len=None,
+                         padding='causal',
+                         use_skip_connections=use_skip_connections,
                          return_sequences=return_sequences, #uncertain about this parameter
-                         regression=True,  # type: bool
-                         dropout_rate=dropout_rate,  # type: float
-                         name=name  # type: str
+                         regression=True,
+                         dropout_rate=dropout_rate,
+                         name=name
                          )
 
     print(f'x_train.shape = {x_train.shape}')
@@ -77,10 +77,10 @@ def run_task(length_of_convolution = 3,
 def run_task_indefinite_random():
     #the number of observations before prediction
     range_length_of_convolution = [10, 100]
-    range_kernel_size=[2, 10]  # type: int
-    range_dilations=[3, 9]  # type: List[int]
-    range_nb_stacks=[0, 5] # type: int
-    range_dropout_rate=[0.01, .1]  # type: float
+    range_kernel_size=[2, 10]
+    range_dilations=[3, 9]
+    range_nb_stacks=[0, 5]
+    range_dropout_rate=[0.01, .1]
     range_epochs = [100, 1000]
     name_num = 0
     namer = "gold"
@@ -98,25 +98,6 @@ def run_task_indefinite_random():
         except AssertionError:
             continue
         name_num += 1
-
-'''
-def run_task_indefinite_grid:
-    #the number of observations before prediction
-    range_length_of_convolution = [10, 100]
-    range_kernel_size=[4, 10]  # type: int
-    range_dilations=[3, 9]  # type: List[int]
-    range_nb_stacks=[1, 5] # type: int
-    range_dropout_rate=[0.01, .1]  # type: float
-    range_epochs = [100, 1000]
-    name_num = 0
-    namer = "random"
-    while(True):
-        name=namer + str(name_num)
-        try:
-            for i in range(range_length_of_convolution[0], range_length_of_convolution[1], 10):
-                for j in range(range_kernel_size[0], range_kernel_size[1], 1):
-                    for k in range(range_dilations[0], range_dilations[1], 1):
-                        for l in range(range_nb_stacks)'''
 
 
 if __name__ == '__main__':
